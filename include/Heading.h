@@ -1,5 +1,5 @@
 #pragma once
-class Heading
+class Heading //расчет оплаты по руководству(кол-ву подчиненных)
 {
 public:
 	Heading() {}
