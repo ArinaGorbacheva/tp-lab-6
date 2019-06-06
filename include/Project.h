@@ -1,5 +1,5 @@
 #pragma once
-
+//рассчет оплаты исходя из участия (бонусы от участия в проекте)
 class Project {
 public:
 	Project() {}
