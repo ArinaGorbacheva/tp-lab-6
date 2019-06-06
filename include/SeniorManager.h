@@ -1,6 +1,6 @@
 #pragma once
 #include"ProjectManager.h"
-
+//руководитель направления
 class SeniorManager : public ProjectManager {
 private:
 	int pjcts_amount;
@@ -18,13 +18,13 @@ public:
 		this->worktime = 0;
 		calculatePayment();
 	}
-
+//рассчитать зп исходя из участия в проекте
 	int ProjectPaymentMethod(int whole_budget, double deposit) override
 	{
 		int payment = whole_budget * this->deposit * this->pjcts_amount;
 		return payment;
 	}
-
+//установить зп
 	void calculatePayment() override
 	{
 		this->payment = (
