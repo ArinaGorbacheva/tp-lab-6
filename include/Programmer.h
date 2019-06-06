@@ -14,7 +14,7 @@ public:
 		calculatePayment();	
 	}
 
-	void calculatePayment() override
+	void calculatePayment() override //зп ставка + бонусы от проекта
 	{
 		this->payment = (
 			WorkTimePaymentMethod(this->worktime, this->base) +
