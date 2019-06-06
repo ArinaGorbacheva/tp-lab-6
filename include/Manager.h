@@ -1,7 +1,7 @@
 #pragma once
 #include "Employee.h"
 #include "Project.h"
-
+//зп из денег проекта (которым управляет)
 class Manager : public Employee, public Project {
 protected:
 	double deposit;
@@ -25,25 +25,25 @@ public:
 		this->worktime = 0;
 		calculatePayment();	
 	}
-	void calculatePayment() override {
-		this->payment = ProjectPaymentMethod(this->budget, this->deposit); 
+	void calculatePayment() override { //метод установить зп
+		this->payment = ProjectPaymentMethod(this->budget, this->deposit); //по методу участия в проекте
 	}
-	int ProjectPaymentMethod(int budget, double deposit) override {
+	int ProjectPaymentMethod(int budget, double deposit) override { //метод участие в проекте
 		int payment = budget * deposit;
 		return payment;
 	}
-	void setDeposit(double depos) {
+	void setDeposit(double depos) { //установить вклад
 		this->deposit = depos;
 	}
-	double getDeposit() {
+	double getDeposit() { //получить тек вклад
 		return deposit;
 	}
 
-// ������� ������
+// задать проект
 	void setProject(string project_name) {
 		this->project = project_name;
 	}
-	string getProject() {
+	string getProject() { //получить проект
 		return project;
 	}
 
