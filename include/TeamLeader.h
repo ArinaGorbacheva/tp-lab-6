@@ -20,7 +20,7 @@ public:
 
 		calculatePayment();			
 	}
-	// рассчет зп исходя из руководства (кол-во подчиненных)
+	//СЂР°СЃС‡РµС‚ Р·Рї РёСЃС…РѕРґСЏ РёР· С‡РёСЃР»Р° РїРѕРґС‡РёРЅРµРЅРЅРІС… 
 	int HeadingPaymentMethod(int salary) override {
 		int pay = salary * 100;
 		return pay;
