@@ -14,9 +14,9 @@
 using namespace std;
 
 int main() {
-	vector <Employee*> workers; 
+	vector <Employee*> workers; //создадим работника
 
-	ifstream FileWorkers("D:/Visual Studio PJCTS/Solution/src/workers.txt"); 
+	ifstream FileWorkers("D:/Visual Studio PJCTS/Solution/src/workers.txt.txt");  //загрузка данных из файла
 
 	if (!FileWorkers.is_open()) {
 		cout << "Failed to open" << endl;
@@ -25,14 +25,14 @@ int main() {
 	else
 	{
 		enum PROFFESIONS {TRAINEE, MANAGER, CLEANER, DRIVER, PROGRAMMER, TEAM_LEADER, TESTER, PROJECT_MANAGER, SENIOR_MANAGER};
-		PROFFESIONS pos_ID = TRAINEE; 
+		PROFFESIONS pos_ID = TRAINEE; // стажер по умолчанию 
 		int id; 
 
 		while (FileWorkers >> id) {
-			string name, surname, second_name, fio, position; 
-			FileWorkers >> name >> surname >> second_name >> position; 
+			string name, surname, second_name, fio, position; //считаем 
+			FileWorkers >> name >> surname >> second_name >> position; //запишем в перемен
 			fio = name + " " + surname + " " + second_name; 
-
+//присвоение должности
 			if (position == "Cleaner")				    pos_ID = CLEANER;
 			else if (position == "Driver")				pos_ID = DRIVER;
 			else if (position == "ProjectManager")		pos_ID = PROJECT_MANAGER;
@@ -52,7 +52,7 @@ int main() {
 			double deposit = 0.0;	
 			string project = "";	
 
-			switch (pos_ID) {
+			switch (pos_ID) { //оюраюотаем данные кождой должности
 			case CLEANER:
 			{
 				FileWorkers >> worktime;
@@ -126,8 +126,8 @@ int main() {
 			}
 		}
 
-		FileWorkers.close(); 
-		for (int i = 0; i < workers.size(); ++i) {
+		FileWorkers.close(); //закрытие файла
+		for (int i = 0; i < workers.size(); ++i) { //вывод информ о работнике на экран
 			workers[i]->calculatePayment();
 			cout <<
 				workers[i]->getID() << "\t" <<
@@ -137,5 +137,6 @@ int main() {
 				<< endl;
 		}
 	}
+		system("pause");
 	return 0;
 }
