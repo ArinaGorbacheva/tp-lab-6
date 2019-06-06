@@ -25,7 +25,7 @@ public:
 			HeadingPaymentMethod(this->salary)
 			); 
 	}
-
+//метод рассчитать зп исходя из кол-ва подчиненных
 	int HeadingPaymentMethod(int sal) override {
 		int salary = sal * 1000;
 		return salary;
