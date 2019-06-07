@@ -16,7 +16,7 @@ using namespace std;
 int main() {
 	vector <Employee*> workers; //создадим работника
 
-	ifstream FileWorkers("D:/Visual Studio PJCTS/Solution/src/workers.txt.txt");  //загрузка данных из файла
+	ifstream FileWorkers("D:/Visual Studio PJCTS/Solution/src/workers.txt");  //загрузка данных из файла
 
 	if (!FileWorkers.is_open()) {
 		cout << "Failed to open" << endl;
